@@ -7,24 +7,26 @@
 // TODO: Splash Screen
 // TODO: Improve UI
 // TODO: Add AppIcon
-// TODO: Add Code Comments
 
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var order = Order()
+    @StateObject var order = SharedOrder()
     var body: some View {
         NavigationView {
             Form {
                 Section {
+                    // Allows users to choose the type of cupcake via a standard Picker
                     Picker("Select your cake type", selection: $order.type) {
-                        ForEach(Order.types.indices) {
-                            Text(Order.types[$0])
+                        ForEach(SharedOrder.types.indices) {
+                            Text(SharedOrder.types[$0])
                         }
                     }
+                    // Allows users to change the quantity of their order, up to 20
                     Stepper("Number of cakes: \(order.quantity)", value: $order.quantity, in: 3...20)
                 }
                 Section {
+                    // Allows users to make special requests, by toggling on, the next block is enabled
                     Toggle("Any special requests?", isOn: $order.specialRequestEnabled.animation())
 
                     if order.specialRequestEnabled {
@@ -32,6 +34,7 @@ struct ContentView: View {
                         Toggle("Add extra sprinkles", isOn: $order.addSprinkles)
                     }
                 }
+                // Allows users to navigate to the AddressView, where they can enter their details
                 Section {
                     NavigationLink {
                         AddressView(order: order)

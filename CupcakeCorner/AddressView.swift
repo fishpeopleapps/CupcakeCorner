@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct AddressView: View {
-    @ObservedObject var order: Order
+    @ObservedObject var order: SharedOrder
     var body: some View {
         Form {
             Section {
-                // TODO: There should be specifics so it's an actual order
-                /// How do I implement one of those address finders? That would be cool to learn
+                // TODO: How do I implement one of those address finders? That would be cool to learn
                 TextField("Name", text: $order.name)
                 TextField("Street Address", text: $order.streetAddress)
                 TextField("City", text: $order.city)
                 TextField("Zip", text: $order.zip)
             }
-
+            // Lights up when user has entered a character into each field above
             Section {
                 NavigationLink {
                     CheckoutView(order: order)
@@ -36,6 +35,6 @@ struct AddressView: View {
 
 struct AddressView_Previews: PreviewProvider {
     static var previews: some View {
-        AddressView(order: Order())
+        AddressView(order: SharedOrder())
     }
 }
