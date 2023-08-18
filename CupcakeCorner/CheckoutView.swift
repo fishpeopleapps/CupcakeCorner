@@ -4,7 +4,7 @@
 //
 //  Created by Kimberly Brewer on 7/31/23.
 //
-
+import Network
 import SwiftUI
 
 struct CheckoutView: View {
@@ -12,6 +12,8 @@ struct CheckoutView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
+    @EnvironmentObject var network: NetworkMonitor
+    let monitor = NWPathMonitor()
     var body: some View {
         ScrollView {
             VStack {
@@ -26,6 +28,14 @@ struct CheckoutView: View {
                 .frame(height: 233)
                 Text("Your total is \(order.cost, format: .currency(code: "USD"))")
                     .font(.title)
+                Text(verbatim: """
+                        Active: \(network.isActive)
+                        Expensive: \(network.isExpensive)
+                        Constrained: \(network.isConstrained)
+                        """)
+                if network.isActive == false {
+                    Text("Please connect to the internet to see store data")
+                }
                 Button("Place Order") {
                     Task {
                         await placeOrder()
@@ -73,8 +83,3 @@ struct CheckoutView: View {
     }
 }
 
-struct CheckoutView_Previews: PreviewProvider {
-    static var previews: some View {
-        CheckoutView(order: SharedOrder())
-    }
-}

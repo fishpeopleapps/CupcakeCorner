@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct CupcakeCornerApp: App {
+    @StateObject var monitor = NetworkMonitor()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(monitor)
         }
     }
 }

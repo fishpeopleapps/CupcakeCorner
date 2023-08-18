@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		818A79FB2A8EB0E500BBA3AD /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818A79FA2A8EB0E500BBA3AD /* NetworkMonitor.swift */; };
 		81C456612A78507700CAC39A /* CupcakeCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C456602A78507700CAC39A /* CupcakeCornerApp.swift */; };
 		81C456632A78507700CAC39A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C456622A78507700CAC39A /* ContentView.swift */; };
 		81C456652A78507A00CAC39A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81C456642A78507A00CAC39A /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		818A79FA2A8EB0E500BBA3AD /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		81C4565D2A78507700CAC39A /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C456602A78507700CAC39A /* CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerApp.swift; sourceTree = "<group>"; };
 		81C456622A78507700CAC39A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				81C456602A78507700CAC39A /* CupcakeCornerApp.swift */,
 				81C456622A78507700CAC39A /* ContentView.swift */,
 				81C456732A78551400CAC39A /* CheckoutView.swift */,
+				818A79FA2A8EB0E500BBA3AD /* NetworkMonitor.swift */,
 				81C456712A78546D00CAC39A /* AddressView.swift */,
 				81C456812A799BA800CAC39A /* String-EmptyChecking.swift */,
 				81C4566E2A78509A00CAC39A /* Order.swift */,
@@ -178,6 +181,7 @@
 				81C456632A78507700CAC39A /* ContentView.swift in Sources */,
 				81C456822A799BA800CAC39A /* String-EmptyChecking.swift in Sources */,
 				81C456612A78507700CAC39A /* CupcakeCornerApp.swift in Sources */,
+				818A79FB2A8EB0E500BBA3AD /* NetworkMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
