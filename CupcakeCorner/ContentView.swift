@@ -12,6 +12,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var order = SharedOrder()
+    @StateObject private var viewModel = AddressViewModel()
     var body: some View {
         NavigationView {
             Form {
@@ -37,7 +38,8 @@ struct ContentView: View {
                 // Allows users to navigate to the AddressView, where they can enter their details
                 Section {
                     NavigationLink {
-                        AddressView(order: order)
+                       // AddressView(order: order, viewModel: viewModel)
+                        Test()
                     } label: {
                         Text("Delivery details")
                     }
@@ -45,11 +47,5 @@ struct ContentView: View {
             }
             .navigationTitle("CupcakeCorner")
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
